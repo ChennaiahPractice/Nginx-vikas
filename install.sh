@@ -5,12 +5,12 @@ sudo ufw status
 sudo apt-get update
 sudo apt-get install mysql-server
 sudo mysql_secure_installation
-sudo apt-get install php-fpm php-mysql -yes
+sudo apt-get install php-fpm php-mysql -y
 add_file="/etc/php/7.0/fpm/php.ini"
 if [ -f $add_file ]
 then 
 	echo "hi vikas file is  avalable"
-	sed -i '2 s cgi.fix_pathinfo=0' $add_file
+	sed -i '2 cgi.fix_pathinfo=0' $add_file
 else
 	echo "file not avalable"
 fi
